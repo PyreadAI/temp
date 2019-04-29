@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>T&S Education Homepage</title>
+    <link rel="stylesheet" href="./src/public/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="./src/public/stylesheets/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div id="example">
+    
+</div> -->
+    <div id="menu">
+        <div id="top-header">
+            <div class="container navbar-container">
+                <div class="pull-left" id="logo">
+                    <p id="logo-text">T&L Education</p>
+                    <!-- <p id="logo-slogan">Fill the slogan here.</p> -->
+                </div>
+                <div class="buttons">
+                    <button class="button1">
+                        <a href="index.html">主页</a>
+                    </button>
+                    <button class="button1">网上课程</button>
+                    <button class="button1">关于我们</button>
+                    <button class="button1">联系方式</button>
+                    <button class="buttons-order-button">注册</button>
+                    <button type="button2" id="user-login" data-toggle="modal" data-target="#myModal">登陆</button>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header modal-background">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">Greetings!</h4>
+                                    <input type="name" name="user-name" placeholder="Name">
+                                    <br>
+                                    <input type="password" name="user-password" placeholder="Password">
+                                    <br>
+                                    <a href="#" id="reset">
+                                        <span>forget password?</span>
+                                    </a>
+                                    <br>
+                                    <button type="button" class="btn-login" data-dismiss="modal">
+                                        <span>Log In</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <template id="list-item-template">
+                <style>
+                    .list-item {
+                        display: flex;
+                        /* border-top: 1px solid rgb(212, 137, 212); */
+                        -webkit-animation: FI 1s ease-out;
+                        animation: FI 1s ease-out;
+                    }
+
+                    @-webkit-keyframes FI {
+                        0% {
+                            display: none;
+                            opacity: 0;
+                        }
+
+                        3% {
+                            display: block;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            display: block;
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes FI {
+                        0% {
+                            display: none;
+                            opacity: 0;
+                        }
+
+                        1% {
+                            display: block;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            display: block;
+                            opacity: 1;
+                        }
+                    }
+
+                    .list-item-date {
+                        flex-basis: 16.66%;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        /* color: orange; */
+                        color: rgb(212, 137, 212);
+                    }
+
+                    .date {
+                        color: rgb(212, 137, 212);
+                    }
+
+                    /* .list-item-date span{
+                    
+                } */
+
+                    .list-item-date .date {
+                        font-size: 3em;
+                    }
+
+                    .list-item-body {
+                        flex-basis: 45%;
+                        flex-grow: 1;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        color: black;
+                    }
+
+                    .list-item-title {
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        color: purple;
+                    }
+
+                    .list-item-detail {
+                        font-size: 0.8em;
+                        opacity: 0.5;
+                    }
+
+                    .list-item-thumbnail {
+                        flex-basis: 16.66%;
+
+                    }
+                </style>
+                <div class="list-item row">
+                    <div class="list-item-date">
+                        <span class="date">
+                            <slot name="day"></slot>
+                        </span>
+                        <br>
+                        <slot name="month"></slot>
+                    </div>
+                    <div class="list-item-body">
+                        <div class="list-item-title">
+                            <slot name="title"></slot>
+                        </div>
+                        <div class="list-item-detail">
+                            <slot name="detail"></slot>
+                        </div>
+                        <div>
+                            <slot name="description"></slot>
+                        </div>
+                    </div>
+                    <div class="list-item-thumbnail">
+                        <slot name="thumbnail"></slot>
+                    </div>
+                </div>
+            </template>
+            <style>
+                /* * {
+                color: black;
+            } */
+
+                .list {
+                    margin-top: 10px;
+                }
+
+                #id-search {
+                    color: black;
+                }
+
+                .video-search-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    height: 6vh;
+                    margin: 6vh 0 6vh 0;
+                }
+
+                #list-search {
+                    flex-basis: 43%;
+                    border: 3px solid rgb(212, 137, 212);
+                    margin-right: 3%;
+                    padding-left: 2%;
+                    padding-right: 10%;
+                }
+
+                #list-search-date {
+                    flex-basis: 16%;
+                    border: 3px solid rgb(212, 137, 212);
+                }
+
+                #list-search-option {
+                    flex-basis: 12%;
+                    height: 100%;
+                    border: 3px solid rgb(212, 137, 212);
+                    border-radius: 0px;
+                    margin: auto;
+                    color: black;
+                }
+
+                iframe {
+                    height: 16vh;
+                    margin-bottom: 10vh;
+                    margin-top: -2vh;
+                }
+
+                button {
+                    all: unset;
+                }
+
+                #list-search-start {
+                    flex-basis: 19%;
+                    background-color: purple;
+                    border: 1px solid purple;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    text-align: center;
+                    font-size: 1.3em;
+                }
+
+                #item-banner {
+                    width: 100%;
+                    height: 60vh;
+                    /* border: 1px solid rgb(212, 137, 212); */
+                    background-image: url("./src/public/images/item-banner1.png");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    /* background-position: center center; */
+                }
+            </style>
+            <div id="item-banner">
+
+            </div>
+            <div class="video-search-container">
+                <input id="list-search" type="text" placeholder="Place Your Search Here..." style="color:black">
+                <input id="list-search-date" type="date" style="color:black">
+                <select id="list-search-option">
+                    <!-- <option hidden disabled selected value></option> -->
+                    <option value="title">Title</option>
+                    <option value="description">Description</option>
+                    <option value="time">Date</option>
+                </select>
+                <button id="list-search-start">Search</button>
+            </div>
+            <div id="item-list" class="list">
+            </div>
+            <script>
+                (function () {
+                    customElements.define('list-item',
+                        class ListItemElement extends HTMLElement {
+                            constructor() {
+                                super();
+                                const template = document.getElementById('list-item-template').content;
+                                const shadowRoot = this.attachShadow({
+                                    mode: 'open'
+                                }).appendChild(template.cloneNode(true));
+                            }
+                        });
+                    const LIST_ITEMS = [
+                        {
+                            title: "no title",
+                            startTime: new Date(2019, 9, 22, 8),
+                            endTime: new Date(2019, 9, 22, 17),
+                            location: "Chicaco, US",
+                            description: "Teach you how to build a complete Learning Management System with WordPress and LearnPress.",
+                            video: "https://www.youtube.com/embed/ZjeZ8r7yWOk"
+                        },
+                        {
+                            title: "Build Education Website Using WordPress",
+                            startTime: new Date(2019, 9, 20, 8),
+                            endTime: new Date(2019, 9, 20, 17),
+                            location: "Chicaco, US",
+                            description: "Teach you how to build a complete Learning Management System with WordPress and LearnPress.",
+                            video: "https://www.youtube.com/embed/ZjeZ8r7yWOk"
+
+                        },
+                        {
+                            title: "拉格朗日插值公式",
+                            startTime: new Date(2019, 0, 19, 8),
+                            endTime: new Date(2019, 0, 19, 17),
+                            location: "温哥华, 加拿大",
+                            description: "拉格朗日插值公式（外文名Lagrange interpolation formula）指的是在节点上给出节点基函数",
+                            video: "https://www.youtube.com/embed/tgbNymZ7vqY"
+                        },
+                        {
+                            title: "拉格朗日插值公式",
+                            startTime: new Date(2019, 0, 10, 8),
+                            endTime: new Date(2019, 0, 10, 17),
+                            location: "温哥华, 加拿大",
+                            description: "拉格朗日插值公式（外文名Lagrange interpolation formula）指的是在节点上给出节点基函数",
+                            video: "https://www.youtube.com/embed/tgbNymZ7vqY"
+                        }
+
+                    ];
+
+                    let list = document.getElementById('item-list');
+                    renderListItems(LIST_ITEMS);
+                    function renderListItems(listItems) {
+                        for (let listItemData of listItems) {
+                            let listItem = dom('list-item', {}, [
+                                dom('span', {
+                                    slot: 'title',
+                                    textContent: listItemData.title
+                                }),
+                                dom('p', {
+                                    slot: 'description',
+                                    textContent: listItemData.description
+                                }),
+                                dom('span', {
+                                    slot: 'day',
+                                    textContent: listItemData.startTime.getDate()
+                                }),
+                                dom('span', {
+                                    slot: 'month',
+                                    textContent: listItemData.startTime.toLocaleDateString({}, { month: 'long' })
+                                }),
+                                dom('span', {
+                                    slot: 'detail'
+                                }, [
+                                        dom('span', {
+                                            textContent: formatInterval(listItemData)
+                                        }),
+                                        document.createTextNode(' '),
+                                        dom('span', {
+                                            textContent: listItemData.location
+                                        })
+                                    ]),
+                                dom('iframe', {
+                                    slot: 'thumbnail',
+                                    src: listItemData.video,
+                                    allowfullscreen: true,
+                                    allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                })
+                            ]);
+
+                            list.appendChild(listItem);
+
+                            function dom(element, attributes = {}, children = []) {
+                                let el = document.createElement(element);
+                                Object.assign(el, attributes);
+                                children.forEach(child => el.appendChild(child));
+                                return el;
+                            }
+
+                            function formatInterval(listItemData) {
+                                let start = listItemData.startTime.toLocaleTimeString({}, { hour: 'numeric', minute: 'numeric' });
+                                let end = listItemData.endTime.toLocaleTimeString({}, { hour: 'numeric', minute: 'numeric' });
+                                return `${start} - ${end}`;
+                            }
+                        }
+                    }
+
+                    let searchInput = document.getElementById('list-search');
+                    let searchDateInput = document.getElementById('list-search-date');
+                    let searchOptionInput = document.getElementById('list-search-option');
+                    let searchStart = document.getElementById('list-search-start');
+                    searchStart.addEventListener('click',
+                        function doSearch(event) {
+                            let searchOption = searchOptionInput.value;
+
+                            let filtered = LIST_ITEMS;
+
+                            let searchStrs = searchInput.value.split(/\s+/)
+                                .filter(str => str.length > 0)
+                                .map(str => str.toLowerCase())
+
+                            if (searchStrs.length > 0) {
+                                filtered = filtered.filter(function (listItem) {
+                                    let texts = [
+                                        listItem.title,
+                                        listItem.location,
+                                        listItem.description
+                                    ];
+                                    switch (searchOption) {
+                                        case 'title':
+                                            texts = [listItem.title];
+                                            break;
+                                        case 'description':
+                                            texts = [listItem.description];
+                                            break;
+                                        case 'date':
+                                            texts = [];
+                                            break;
+                                    }
+                                    return searchStrs.some(searchStr =>
+                                        texts.some(text => text.toLowerCase().includes(searchStr)));
+                                });
+                            }
+
+                            let searchDate = searchDateInput.valueAsDate;
+                            console.log(searchDate);
+                            console.log(searchOption);
+                            if ((searchOption === 'time' || !searchOption) &&
+                                searchDate) {
+                                filtered = filtered.filter(function (listItem) {
+                                    return listItem.startTime.getDate() === searchDate.getDate()+1 &&
+                                        listItem.startTime.getMonth() === searchDate.getMonth() &&
+                                        listItem.startTime.getFullYear() === searchDate.getFullYear()
+                                })
+                                console.log(filtered);
+                                
+                            }
+
+                            //remove all child node
+                            while (list.firstChild) {
+                                list.removeChild(list.firstChild);
+                            }
+
+                            renderListItems(filtered);
+                        });
+                })()
+            </script>
+        </div>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="./node_modules/react/dist/react.js"></script>
+    <script src="./node_modules/react-dom/dist/react-dom.js"></script>
+
+    <!-- Main -->
+    <script src="./dist/bundle.js"></script>
+    <script src="./src/public/scripts/jquery-2.1.4.min.js"></script>
+    <script src="./src/public/scripts/script.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function () {
+            var height = $('#top-header').outerHeight(true);
+            if ($(window).scrollTop() > 0) {
+                $('#top-header').addClass('fix-search');
+                $('#top-header').addClass('navbar-fixed-top');
+                $(menu).css({ "padding-top": height });
+            } else {
+                $('#top-header').removeClass('fix-search');
+                $('#top-header').removeClass('navbar-fixed-top');
+                $(menu).css({ "padding-top": 0 });
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
