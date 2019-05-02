@@ -155,12 +155,15 @@
                         <div class="contact-form-block _2">
                             <input type="text" id="node" maxlength="256" data-name="名称" placeholder="名称"
                                 class="field register w-input">
+                            <input type="text" id="node" maxlength="256" data-name="课程" placeholder="课程编号"
+                                class="field register w-input">
                             <input type="email" id="Email-3" name="Email" data-name="Email" required="" maxlength="256"
                                 placeholder="邮箱" class="field register w-input">
                             <input type="text" id="Name-4" name="Name-4" data-name="Name 4" placeholder="电话"
                                 maxlength="256" class="field register w-input">
                             <input type="submit" value="报名" data-wait="Please wait..."
                                 class="button submit-button w-button">
+
                         </div>
                     </form>
                     <div class="success-bg w-form-done">
@@ -174,47 +177,50 @@
         </div>
     </div>
     <div class="container">
-        <table class="table table-hover container table-striped" style="border-left: 1px solid lightgrey; border-right: 1px solid lightgrey;">
-                <thead>
-                    <br />
-                </thead>
-                
-                <tbody>
-                    <tr data-toggle="collapse" data-target="#accordion" style="height: 6vh; font-size: 1.7em" class="clickable">
-                        <td style="width: 80%;">AP课程</td>
-                        <td style="width: 10%">(4)</td>
-                        <td style="width: 10%"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <div id="accordion" class="collapse">
-                                    <table class="table table-hover container">
-                                            <thead>
-                                                <br />
-                                            </thead>
-                                            
-                                            <tbody>
-                                                <tr data-toggle="collapse" data-target="#accordion" style="height: 6vh;" class="clickable">
-                                                    <td style="width: 70%;">AP课程</td>
-                                                    <td style="width: 15%">(4)</td>
-                                                    <td style="width: 15%"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">
-                                                        <div id="accordion" class="collapse">
-                                                            
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                    </table>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+        <table class="table table-hover container table-striped"
+            style="border-left: 1px solid lightgrey; border-right: 1px solid lightgrey;">
+            <thead>
+                <br />
+            </thead>
+
+            <tbody>
+                <tr data-toggle="collapse" data-target="#accordion" style="height: 6vh; font-size: 1.7em"
+                    class="clickable">
+                    <td style="width: 80%;">AP课程</td>
+                    <td style="width: 10%">(4)</td>
+                    <td style="width: 10%"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div id="accordion" class="collapse">
+                            <table class="table table-hover container">
+                                <thead>
+                                    <br />
+                                </thead>
+
+                                <tbody>
+                                    <tr data-toggle="collapse" data-target="#accordion-AP" style="height: 6vh;"
+                                        class="clickable">
+                                        <td style="width: 70%;">AP课程</td>
+                                        <td style="width: 15%">(4)</td>
+                                        <td style="width: 15%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div id="accordion-AP" class="collapse">
+                                                something
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
-    
+
     <!-- <div class="container" id="accordion">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -258,10 +264,10 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous">
     </script>
-    <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.development.js">
+    <!-- <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.3/umd/react.development.js">
     </script>
     <script crossorigin="anonymous"
-        src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.development.js"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.3/umd/react-dom.development.js"></script> -->
     <script src="./dist/bundle.js"></script>
     <script>
 

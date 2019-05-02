@@ -1,5 +1,6 @@
 import * as React from "react";
 import { TableContainer } from "./TableContainer";
+import { Grid, Table, TableHeaderRow } from '@devexpress/dx-react-grid-material-ui';
 
 interface IRow {
     name: string,
@@ -10,22 +11,12 @@ interface IRow {
 export class MainContainer extends React.Component<{info:any}, any> {
     constructor(props:{info:any}) {
         super(props);
-        this.state = {
-            columns: [
-              { name: 'name', title: 'Name' }
-            ],
-            rows: [
-              { sex: "Female", name: "Sandra", city: "Las Vegas", car: "Audi A4" }
-            ]
-          };
     }
     
     divStyle = {
         color: 'black'
     };
     render() {
-        return <div></div>
+        return <TableContainer info={""}/>
     }
 }
-
-
