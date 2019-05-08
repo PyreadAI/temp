@@ -67,10 +67,11 @@ export class CourseDescription extends React.Component<{ course_info: any }, any
                     
                 </div>
                 <div>
-                    <button type="button" className="btn btn-primary" style={{
-                        width: '9vw', position: "fixed", top: "50 %",
-                        left: "50 %",
-                    }}>Primary</button>
+                    <button type="button" className="" style={{
+                        width: '9vw', backgroundColor:"#286090", marginTop:"10%", color:"white", borderRadius:"3px",
+                        fontSize:"20px",
+                        height:"4vh"
+                    }}>现在报名</button>
                 </div>
             </div>
         </div>

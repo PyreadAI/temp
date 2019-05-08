@@ -1902,9 +1902,19 @@ table{
   background-color: lightgreen;
   color:white;
 }
+.filter
 /* td{
   padding-bottom: 0px !important;
 } */
 /* .custombutton{
   Color: Green !important;
 } */
+.course-search-input{
+
+    width: 20%;
+    margin-left: 5%;
+height: 35px;
+border:2px solid gold;
+font-size: 1.5em
+
+}
