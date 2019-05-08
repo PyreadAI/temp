@@ -44,7 +44,7 @@ export class CourseDescription extends React.Component<{ course_info: any }, any
     }
 
     render() {
-        return <div   style={{ display: "flex", flexDirection: "row",paddingLeft:"3%",paddingRight:"3%", backgroundColor:"#F5F5F5"}}>
+        return <div style={{ display: "flex", flexDirection: "row",paddingLeft:"3%",paddingRight:"3%", backgroundColor:"#F5F5F5"}}>
             <div className={"descr"} style={{ flexBasis: "80%", paddingBottom: '2%', paddingRight: '10%' }}>
                 <h3>课程介绍</h3>
                 {this.props.course_info.description}

@@ -115,7 +115,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                     ages: "G1/G2/G3",
                     schedule: "5月 6月 8月 周一到周日",
                     classtime: 30,
-                    description: "Lorem 速成 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    description: "Lorem 速成 ipsum dolor sit rum.",
                     isFull: false
                 },
                     {
@@ -123,7 +123,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                         ages: "G1/G2/G3",
                         schedule: "5月 6月 8月 周一到周日",
                         classtime: 140,
-                        description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        description: "orem it ametsum dolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolor sit amet, consum dolor sit amet, consum dolor sit amet, consum dolor sit amet, consum dolor sit amet, con, consectetur adipism.",
                         isFull: false
                     }]
             },{
@@ -190,7 +190,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                         ages: "G1/G2/G3",
                         schedule: "5月 6月 7月 8月 周一到周日",
                         classtime: 30,
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        description: " adipiscing elit, sed do eiusmodum.",
                         isFull: false
                     },
                         {
@@ -198,7 +198,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 7月 8月 周一到周日",
                             classtime: 140,
-                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit,.",
                             isFull: false
                         }]
                 }],
@@ -212,7 +212,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                     ages: "G1/G2/G3",
                     schedule: "5月 6月 8月 周一到周日",
                     classtime: 30,
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    description: "Lorem ipsdolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolorum dolor sit amet, consectetur adipiscing .",
                     isFull: false
                 },
                 {
@@ -220,7 +220,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                     ages: "G1/G2/G3",
                     schedule: "5月 6月 8月 周一到周日",
                     classtime: 140,
-                    description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    description: "orem ipsum dolorm.",
                     isFull: false
                 }]
             },
@@ -288,7 +288,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                     ages: "G1/G2/G3",
                     schedule: "5月 6月 7月 8月 周一到周日",
                     classtime: 30,
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    description: "Lorem ipsum dolor sit amet, consectetur 速成",
                     isFull: false
                 },
                 {
@@ -296,7 +296,7 @@ export class MainContainer extends React.Component<any, { info: CourseCatInfo[],
                     ages: "G1/G2/G3",
                     schedule: "5月 6月 7月 8月 周一到周日",
                     classtime: 140,
-                    description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    description: " eiusmod tempor incrum.",
                     isFull: false
                 }]
             }],

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "bcc478cde8e49e00e06a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2c92d0e614f02a63642e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -46770,7 +46770,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 8月 周一到周日",
                             classtime: 30,
-                            description: "Lorem 速成 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "Lorem 速成 ipsum dolor sit rum.",
                             isFull: false
                         },
                         {
@@ -46778,7 +46778,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 8月 周一到周日",
                             classtime: 140,
-                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "orem it ametsum dolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolor sit amet, consum dolor sit amet, consum dolor sit amet, consum dolor sit amet, consum dolor sit amet, con, consectetur adipism.",
                             isFull: false
                         }]
                 }, {
@@ -46844,7 +46844,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 7月 8月 周一到周日",
                             classtime: 30,
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: " adipiscing elit, sed do eiusmodum.",
                             isFull: false
                         },
                         {
@@ -46852,7 +46852,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 7月 8月 周一到周日",
                             classtime: 140,
-                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit,.",
                             isFull: false
                         }]
                 }],
@@ -46865,7 +46865,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 8月 周一到周日",
                             classtime: 30,
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "Lorem ipsdolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolordolor sit amet, consum dolorum dolor sit amet, consectetur adipiscing .",
                             isFull: false
                         },
                         {
@@ -46873,7 +46873,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 8月 周一到周日",
                             classtime: 140,
-                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "orem ipsum dolorm.",
                             isFull: false
                         }]
                 },
@@ -46940,7 +46940,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 7月 8月 周一到周日",
                             classtime: 30,
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "Lorem ipsum dolor sit amet, consectetur 速成",
                             isFull: false
                         },
                         {
@@ -46948,7 +46948,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 7月 8月 周一到周日",
                             classtime: 140,
-                            description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: " eiusmod tempor incrum.",
                             isFull: false
                         }]
                 }],
