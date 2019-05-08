@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "480efa706d4131000b0a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bcc478cde8e49e00e06a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -46278,6 +46278,7 @@ var PresentationalCourseDescription_1 = __webpack_require__("./src/components/Pr
 var dx_react_grid_1 = __webpack_require__("./node_modules/@devexpress/dx-react-grid/dist/dx-react-grid.es.js");
 var CourseRegisterButton_1 = __webpack_require__("./src/components/CourseRegisterButton.tsx");
 var CourseExpandButton_1 = __webpack_require__("./src/components/CourseExpandButton.tsx");
+var react_1 = __webpack_require__("./node_modules/react/index.js");
 var dx_react_grid_bootstrap4_1 = __webpack_require__("./node_modules/@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.es.js");
 // import { generateRows } from '../../../demo-data/generator';
 // const TableRow = ({ row, ...restProps }) => (
@@ -46292,6 +46293,24 @@ var dx_react_grid_bootstrap4_1 = __webpack_require__("./node_modules/@devexpress
 //       }}
 //     />
 //   );
+function getWindowDimensions() {
+    var width = window.innerWidth, height = window.innerHeight;
+    return {
+        width: width,
+        height: height
+    };
+}
+function useWindowDimensions() {
+    var _a = react_1.useState(getWindowDimensions()), windowDimensions = _a[0], setWindowDimensions = _a[1];
+    react_1.useEffect(function () {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+        window.addEventListener('resize', handleResize);
+        return function () { return window.removeEventListener('resize', handleResize); };
+    }, []);
+    return windowDimensions;
+}
 var CourseListTable = /** @class */ (function (_super) {
     __extends(CourseListTable, _super);
     function CourseListTable(props) {
@@ -46305,23 +46324,34 @@ var CourseListTable = /** @class */ (function (_super) {
             console.log(row);
             var FullClass = row.isFull ? "RowFull" : "ourrow";
             //@ts-ignore
-            return React.createElement(dx_react_grid_bootstrap4_1.Table.Row, __assign({}, restProps, { className: FullClass, 
+            return React.createElement(dx_react_grid_bootstrap4_1.Table.Row, __assign({}, restProps, { 
                 // eslint-disable-next-line no-alert
                 style: {
                     textAlign: "center",
                     position: "relative"
                 } }));
         };
+        _this.responsiveCell = function (_a) {
+            var value = _a.value, style = _a.style, restProps = __rest(_a, ["value", "style"]);
+            console.log(value);
+            //@ts-ignore
+            return React.createElement(dx_react_grid_bootstrap4_1.Table.Cell, __assign({}, restProps, { style: style, className: "" }));
+        };
         var courselist = _this.datamanipulation(_this.props.courselist);
+        var _a = getWindowDimensions(), height = _a.height, width = _a.width;
+        var rescolumns = width <= 800 ? [
+            { name: 'expand', title: '展开' },
+            { name: 'name', title: '名称' },
+        ] : [
+            { name: 'expand', title: '展开' },
+            { name: 'name', title: '名称' },
+            { name: 'ages', title: '适合年级' },
+            { name: 'schedule', title: '课程安排' },
+            { name: 'classtime', title: '课时' },
+            { name: 'register', title: '报名' }
+        ];
         _this.state = {
-            columns: [
-                { name: 'expand', title: '展开' },
-                { name: 'name', title: '名称' },
-                { name: 'ages', title: '适合年级' },
-                { name: 'schedule', title: '课程安排' },
-                { name: 'classtime', title: '课时' },
-                { name: 'register', title: '报名' }
-            ],
+            columns: rescolumns,
             expandedRowIds: [],
             list: _this.props.courselist,
             expanded: false
@@ -46442,12 +46472,12 @@ var RegisterButton = /** @class */ (function (_super) {
     };
     RegisterButton.prototype.render = function () {
         var id = "my" + this.props.info.name;
-        console.log(id);
+        // console.log(id);
         return this.props.info.isFull ? React.createElement("div", null,
             React.createElement("button", { disabled: true, style: this.props.style, type: "button", className: "btn btn-primary" }, "\u62A5\u540D"))
             :
                 React.createElement("div", null,
-                    React.createElement("button", { style: this.props.style, type: "button", id: id, className: "btn btn-primary", "data-toggle": "modal", "data-target": id }, "\u62A5\u540D"));
+                    React.createElement("button", { onClick: function () { alert("【服务器无响应】报名系统未开放"); }, style: this.props.style, type: "button", id: id, className: "btn btn-primary", "data-toggle": "modal", "data-target": id }, "\u62A5\u540D"));
     };
     return RegisterButton;
 }(React.Component));
@@ -46493,13 +46523,32 @@ var SerachBar = /** @class */ (function (_super) {
     //     }
     // }
     SerachBar.prototype.render = function () {
-        return React.createElement("div", { className: "container" },
-            React.createElement("select", { onChange: this.props.handleOption },
+        return React.createElement("div", { className: "container", style: {
+                marginTop: "3vh",
+                marginBottom: "3vh"
+            } },
+            React.createElement("select", { 
+                // style={{
+                //     width:"15%",
+                //     marginLeft:"30%",
+                //     height: "5vh",
+                //     border:"2px solid gold",
+                //     fontSize: "1.5em",
+                //     paddingLeft:"10px"
+                // }} 
+                className: "mycourseselect", onChange: this.props.handleOption },
                 React.createElement("option", { value: "name" }, "\u8BFE\u7A0B"),
                 React.createElement("option", { value: "classtime" }, "\u8BFE\u65F6"),
                 React.createElement("option", { value: "ages" }, "\u9002\u5408\u5E74\u7EA7"),
                 React.createElement("option", { value: "description" }, "\u8BFE\u7A0B\u5173\u952E\u8BCD")),
-            React.createElement("input", { onKeyUp: this.props.handleSearch, type: "text", placeholder: "Search.." }));
+            React.createElement("input", { className: "coursesearchinput", style: {
+                    width: "30%",
+                    marginLeft: "3%",
+                    height: "5vh",
+                    border: "2px solid gold",
+                    fontSize: "1.5em",
+                    paddingLeft: "10px"
+                }, onKeyUp: this.props.handleSearch, type: "text", placeholder: "Search.." }));
     };
     return SerachBar;
 }(React.Component));
@@ -46561,85 +46610,56 @@ var MainContainer = /** @class */ (function (_super) {
         };
         _this.handleSearchKeyUp = function (e) {
             var value = e.target.value;
-            // if (self.state.timeout) {
-            //     clearTimeout(self.state.timeout);
-            // }
+            var that = _this;
+            if (that.state.timeout) {
+                clearTimeout(that.state.timeout);
+            }
             var option = _this.state.option;
             var myinfo = _this.state.info;
-            if (_this.sanityCheck(_this.state.option, value)) {
-                var modified = [];
-                var _loop_1 = function (mykey) {
-                    console.log(myinfo[mykey].courses);
-                    // console.log(this.state.info[mykey].courses);
-                    var course_num = [];
-                    var found = false;
-                    myinfo[mykey].courses.forEach(function (course, coursekey) {
-                        if (course[option].toString().includes(value)) {
-                            console.log(course[option].toString());
-                            course_num.push(coursekey);
-                            found = true;
-                        }
-                    });
-                    // //populate courses
-                    if (found) {
-                        console.log("enter");
-                        var newinfo_1 = myinfo[mykey];
-                        newinfo_1["courses"] = [];
-                        course_num.forEach(function (key) {
-                            newinfo_1["courses"].push(myinfo[mykey].courses[key]);
-                        });
-                        modified.push(newinfo_1);
-                    }
-                };
-                //populate course-level
-                for (var mykey = 0; mykey < _this.state.info.length; mykey++) {
-                    _loop_1(mykey);
-                }
-                console.log(modified);
-            }
-            else {
-                alert("not correct input!!!");
-            }
+            var mymodified = [];
             // console.log(value)
-            // typingTimeout: setTimeout(function () {
-            //     if(self.sanityCheck(self.state.option, value)){
-            //         let modified = [];
-            //         //populate course-level
-            //         target.forEach((i:CourseCatInfo,key:number) => {
-            //             console.log(i.courses);
-            //             let course_num:number[] = [];
-            //             let found:boolean = false;
-            //             i.courses.forEach((course:any, coursekey:number)=>{
-            //                 if(course[option].toString().includes(value)){
-            //                     console.log(course[option].toString())
-            //                     course_num.push(coursekey);
-            //                     found = true;
-            //                 }
-            //             })
-            //             //populate courses
-            //             if(found){
-            //                 console.log("enter");
-            //                 let new_i = i;
-            //                 new_i["courses"] = []
-            //                 course_num.forEach((key:number) =>{
-            //                     new_i["courses"].push(i.courses[key])
-            //                 })
-            //                 modified.push(new_i);
-            //             }
-            //         });
-            //         console.log(modified);
-            //     }else{
-            //         alert("not correct input!!!")
-            //     }
-            //     console.log(value)
-            // }, 2000)
-            // self.setState({
-            //    name: event.target.value,
-            //    typing: false,
-            //    typingTimeout: setTimeout(function () {
-            //        self.sendToParent(self.state.name);
-            //      }, 5000)
-            // });
+            typingTimeout: setTimeout(function () {
+                if (that.sanityCheck(that.state.option, value)) {
+                    var _loop_1 = function (mykey) {
+                        console.log("time" + mykey);
+                        console.log(myinfo[mykey].courses);
+                        // console.log(this.state.info[mykey].courses);
+                        var course_temp = [];
+                        var found = false;
+                        myinfo[mykey].courses.forEach(function (course, coursekey) {
+                            if (course[option].toString().includes(value)) {
+                                console.log(course[option].toString());
+                                course_temp.push(course);
+                                found = true;
+                            }
+                        });
+                        console.log(course_temp);
+                        var clone_temp = {
+                            level_subject: "",
+                            color: "",
+                            courses: []
+                        };
+                        // //populate courses
+                        if (found) {
+                            clone_temp["level_subject"] = myinfo[mykey]["level_subject"];
+                            clone_temp["color"] = myinfo[mykey]["color"];
+                            clone_temp["courses"] = course_temp;
+                            mymodified.push(clone_temp);
+                        }
+                    };
+                    //populate course-level
+                    for (var mykey = 0; mykey < that.state.info.length; mykey++) {
+                        _loop_1(mykey);
+                    }
+                    console.log(mymodified);
+                    that.setState({
+                        modified: mymodified
+                    });
+                }
+                else {
+                    alert("not correct input!!!");
+                }
+            }, 1500);
         };
         _this.handleSelectOption = function (e) {
             console.log(e.target.value);
@@ -46647,6 +46667,100 @@ var MainContainer = /** @class */ (function (_super) {
                 option: e.target.value
             });
         };
+        // let temp_info: [{
+        //     level_subject: "高中数理化",
+        //     color: "lightgreen",
+        //     courses: [{
+        //         name: "数学G9",
+        //         ages: "G1/G2/G3",
+        //         schedule: "5月 6月 8月 周一到周日",
+        //         classtime: 30,
+        //         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        //         isFull: false
+        //     },
+        //         {
+        //             name: "数学G10",
+        //             ages: "G1/G2/G3",
+        //             schedule: "5月 6月 8月 周一到周日",
+        //             classtime: 140,
+        //             description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        //             isFull: false
+        //         }]
+        // },{
+        //         level_subject: "AP考试",
+        //         color: "lightgreen",
+        //         courses: [{
+        //             name: "AP数学",
+        //             ages: "30-40",
+        //             schedule: "5月 6月 8月 周一到周日",
+        //             classtime: 20,
+        //             description: "",
+        //             isFull: true
+        //         },
+        //             {
+        //                 name: "AP统计",
+        //                 ages: "30-40",
+        //                 schedule: "5月 6月 8月 周一到周日",
+        //                 classtime: 20,
+        //                 description: "",
+        //                 isFull: false
+        //             },
+        //             {
+        //                 name: "AP化学",
+        //                 ages: "30-40",
+        //                 schedule: "5月 6月 8月 周一到周日",
+        //                 classtime: 20,
+        //                 description: "",
+        //                 isFull: false
+        //             },
+        //             {
+        //                 name: "AP经济",
+        //                 ages: "30-40",
+        //                 schedule: "5月 6月 8月 周一到周日",
+        //                 classtime: 20,
+        //                 description: "",
+        //                 isFull: false
+        //             }]
+        //     },
+        //     {
+        //         level_subject: "大学经济",
+        //         color: "lightblue",
+        //         courses: [{
+        //             name: "微观经济学",
+        //             ages: "30-40",
+        //             schedule: "5月 6月 8月 周一到周日",
+        //             classtime: 20,
+        //             description: "",
+        //             isFull: false
+        //         },
+        //             {
+        //                 name: "宏观经济学",
+        //                 ages: "30-40",
+        //                 schedule: "5月 6月 8月 周一到周日",
+        //                 classtime: 120,
+        //                 description: "dsfldlkfjsadklfa",
+        //                 isFull: false
+        //             }]
+        //     }, {
+        //         level_subject: "大数据分析",
+        //         color: "lightblue",
+        //         courses: [{
+        //             name: "大数据分析基础",
+        //             ages: "G1/G2/G3",
+        //             schedule: "5月 6月 7月 8月 周一到周日",
+        //             classtime: 30,
+        //             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        //             isFull: false
+        //         },
+        //             {
+        //                 name: "大数据分析应用和编程",
+        //                 ages: "G1/G2/G3",
+        //                 schedule: "5月 6月 7月 8月 周一到周日",
+        //                 classtime: 140,
+        //                 description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        //                 isFull: false
+        //             }]
+        //     }]
         _this.state = {
             info: [{
                     level_subject: "高中数理化",
@@ -46656,7 +46770,7 @@ var MainContainer = /** @class */ (function (_super) {
                             ages: "G1/G2/G3",
                             schedule: "5月 6月 8月 周一到周日",
                             classtime: 30,
-                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            description: "Lorem 速成 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                             isFull: false
                         },
                         {
@@ -46667,8 +46781,7 @@ var MainContainer = /** @class */ (function (_super) {
                             description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                             isFull: false
                         }]
-                },
-                {
+                }, {
                     level_subject: "AP考试",
                     color: "lightgreen",
                     courses: [{
@@ -46743,6 +46856,7 @@ var MainContainer = /** @class */ (function (_super) {
                             isFull: false
                         }]
                 }],
+            // modified: temp_info,
             modified: [{
                     level_subject: "高中数理化",
                     color: "lightgreen",
@@ -46957,10 +47071,11 @@ var CourseDescription = /** @class */ (function (_super) {
                         React.createElement("img", { src: "./src/components/size.svg", alt: "classsize" }),
                         this.props.course_info.ages)),
                 React.createElement("div", null,
-                    React.createElement("button", { type: "button", className: "btn btn-primary", style: {
-                            width: '9vw', position: "fixed", top: "50 %",
-                            left: "50 %",
-                        } }, "Primary"))));
+                    React.createElement("button", { type: "button", className: "", style: {
+                            width: '9vw', backgroundColor: "#286090", marginTop: "10%", color: "white", borderRadius: "3px",
+                            fontSize: "20px",
+                            height: "4vh"
+                        } }, "\u73B0\u5728\u62A5\u540D"))));
     };
     return CourseDescription;
 }(React.Component));
@@ -47171,7 +47286,7 @@ var TableContainer = /** @class */ (function (_super) {
                     textAlign: "center",
                     height: "7vh",
                     fontSize: "2em"
-                } })));
+                }, className: "ressubjectlevel" })));
         };
         var ids = _this.props.info.map(function (i, key) {
             return key;
