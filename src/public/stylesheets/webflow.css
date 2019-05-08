@@ -1898,10 +1898,10 @@ table{
   width: 80%;
   /* background-color:rgba(0, 0, 0, 0); */
 }
-.button-level:hover{
+/* .button-level:hover{
   background-color: lightgreen;
   color:white;
-}
+} */
 .filter
 /* td{
   padding-bottom: 0px !important;
@@ -1909,12 +1909,63 @@ table{
 /* .custombutton{
   Color: Green !important;
 } */
-.course-search-input{
+.coursesearchinput{
+    width:30%;
+    margin-left:3% ;
+    height: 5vh;
+    border:2px solid gold;
+    font-size: 1.5em;
+    padding-left:10px;
+  }
+.mycourseselect{
+  width:15%;
+  margin-left:30%;
+  height: 5vh;
+  border:2px solid gold;
+  font-size: 1.5em;
+  padding-left:10px;
+}
+.ressubjectlevel{
+  
+}
+.notshown{
 
-    width: 20%;
-    margin-left: 5%;
-height: 35px;
-border:2px solid gold;
-font-size: 1.5em
+}
+.shown{
+  
+}
+@media screen and (max-width: 991px) {
+  .course-buttons-level{
+    flex: 0 0 33.3333%;
+    font-size: 8px;
+    margin-bottom: 1em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .course-buttons-level{
+    flex: 0 0 50%;
+    /* flex-basis: 22%; */
+    font-size: 1em;
+    margin-bottom: 1em;
+    /* flex: 1; */
+  }
+  .mycourseselect{
+    width:45%;
+    margin-left:10%;
+    height: 5vh;
+    border:2px solid gold;
+    font-size: 1.5em;
+    padding-left:10px;
+  }
+  
+}
 
+@media screen and (max-width: 200px) {
+  .course-buttons-level{
+    flex: 0 0 50%;
+    /* flex-basis: 22%; */
+    font-size: 1em;
+    margin-bottom: 1em;
+    /* flex: 1; */
+  }
 }

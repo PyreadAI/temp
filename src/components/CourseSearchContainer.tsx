@@ -25,20 +25,22 @@ export class SerachBar extends React.Component<{ handleSearch: any, handleOption
             marginBottom:"3vh"
         }}>
             <select
-            style={{
-                width:"15%",
-                marginLeft:"30%",
-                height: "5vh",
-                border:"2px solid gold",
-                fontSize: "1.5em",
-                paddingLeft:"10px"
-            }} onChange={this.props.handleOption}>
+            // style={{
+            //     width:"15%",
+            //     marginLeft:"30%",
+            //     height: "5vh",
+            //     border:"2px solid gold",
+            //     fontSize: "1.5em",
+            //     paddingLeft:"10px"
+            // }} 
+            className={"mycourseselect"}
+            onChange={this.props.handleOption}>
                 <option value="name">课程</option>
                 <option value="classtime">课时</option>
                 <option value="ages">适合年级</option>
                 <option value="description">课程关键词</option>
             </select>
-            <input className={"course-search-input"}
+            <input className={"coursesearchinput"}
             style={{
                 width:"30%",
                 marginLeft:"3%",

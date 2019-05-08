@@ -45,7 +45,7 @@ export class CourseListTable extends React.PureComponent<any, any> {
             return it;
         })
     }
-
+    
     constructor(props) {
         super(props);
         let courselist = this.datamanipulation(this.props.courselist);
@@ -130,6 +130,20 @@ export class CourseListTable extends React.PureComponent<any, any> {
         // console.log(courserow)
         return (courserow.row.description === "" ? <div></div> : <CourseDescription course_info={courserow.row} />)
     }
+    responsiveCell = function({ value,style,...restProps}){
+        console.log(value);
+        //@ts-ignore
+        return <Table.Cell
+          {...restProps}
+          style={...style}
+          className={""}
+        />
+         
+        
+    } 
+        
+        
+
     render() {
         const { columns } = this.state;
         
@@ -146,6 +160,8 @@ export class CourseListTable extends React.PureComponent<any, any> {
                     <Table
                         tableComponent={this.TableComponent}
                         rowComponent={this.TableRow}
+                        //@ts-ignore
+                        // cellComponent={this.responsiveCell}
                     />
                      {/* <Table rowComponent={TableRow} /> */}
                     <TableHeaderRow />

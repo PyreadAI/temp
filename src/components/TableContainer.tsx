@@ -80,6 +80,7 @@ export class TableContainer extends React.PureComponent<{ info: any }, any> {
                 height: "7vh",
                 fontSize: "2em"
             }}
+            className={"ressubjectlevel"}
         />
     );
     // EveryHeaderCell = ({ row, ...restprops }) => (
