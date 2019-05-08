@@ -6,7 +6,7 @@ export default interface CourseCatInfo{
 }
 interface Course{
     name: string;
-    size: number;
+    ages: string;
     schedule: string; //format undetermined
     classtime: number; //in hrs
     description: string;

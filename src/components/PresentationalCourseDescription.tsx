@@ -44,9 +44,9 @@ export class CourseDescription extends React.Component<{ course_info: any }, any
     }
 
     render() {
-        return <div  style={{ display: "flex", flexDirection: "row",paddingLeft:"3%",paddingRight:"3%", backgroundColor:"#C8C8C8"}}>
-            <div style={{ flexBasis: "80%", paddingBottom: '2%', paddingRight: '10%' }}>
-                <h3>详细介绍</h3>
+        return <div   style={{ display: "flex", flexDirection: "row",paddingLeft:"3%",paddingRight:"3%", backgroundColor:"#F5F5F5"}}>
+            <div className={"descr"} style={{ flexBasis: "80%", paddingBottom: '2%', paddingRight: '10%' }}>
+                <h3>课程介绍</h3>
                 {this.props.course_info.description}
             </div>
             <div style={{ flexBasis: "15%", display: 'flex', flexDirection: 'column' }}>
@@ -59,12 +59,12 @@ export class CourseDescription extends React.Component<{ course_info: any }, any
                         {this.props.course_info.classtime}
                     </div>
                     <div className="classsize-icon">
-                        <h5>班级大小</h5>
+                        <h5>适合年级</h5>
                         {/* <h5 style={{float:'left'}}>班级大小</h5> */}
                         <img src="./src/components/size.svg" alt="classsize" />
-                        {this.props.course_info.size}
+                        {this.props.course_info.ages}
                     </div>
-
+                    
                 </div>
                 <div>
                     <button type="button" className="btn btn-primary" style={{

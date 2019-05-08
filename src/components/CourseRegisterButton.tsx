@@ -1,12 +1,25 @@
 import * as React from "react";
-import { instanceOf } from "prop-types";
+// import { instanceOf } from "prop-types";
 
-
+// import { Button, Modal } from 'react-bootstrap';
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
 export class RegisterButton extends React.Component<{ style: any, info: any }, any> {
     constructor(props: { style: any, info: any }) {
         super(props);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.state = {
+            show: false,
+        };
+    }
+    handleClose() {
+        this.setState({ show: false });
     }
 
+    handleShow() {
+        this.setState({ show: true });
+    }
     render() {
         let id: string = "my" + this.props.info.name;
         console.log(id);
@@ -17,25 +30,6 @@ export class RegisterButton extends React.Component<{ style: any, info: any }, a
             :
             <div>
                 <button style={this.props.style} type="button" id={id} className="btn btn-primary" data-toggle="modal" data-target={id}>报名</button>
-                <div className="modal fade" id={id} tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">现在报名</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div className="modal-body">
-                                ...
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
     }
 }

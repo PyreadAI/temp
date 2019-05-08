@@ -1800,3 +1800,111 @@ textarea.w-select {
 .w-condition-invisible {
   display: none !important;
 }
+
+/* new */
+
+.transparent {
+	/* Required for IE 5, 6, 7 */
+	/* ...or something to trigger hasLayout, like zoom: 1; */
+	width: 100%; 
+		
+	/* Theoretically for IE 8 & 9 (more valid) */	
+	/* ...but not required as filter works too */
+	/* should come BEFORE filter */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	
+	/* This works in IE 8 & 9 too */
+	/* ... but also 5, 6, 7 */
+	filter: alpha(opacity=50);
+	
+	/* Older than Firefox 0.9 */
+	-moz-opacity:0.5;
+	
+	/* Safari 1.x (pre WebKit!) */
+	-khtml-opacity: 0.5;
+    
+	/* Modern!
+	/* Firefox 0.9+, Safari 2?, Chrome any?
+	/* Opera 9+, IE 9+ */
+	opacity: 0.5;
+}
+.RowFull{
+  cursor:not-allowed;
+  position: relative;
+  /* background-color: black !important; */
+  /* background-color: rgba(0, 0, 0, 0.5) !important; */
+  /* opacity: 0.5; */
+  /* background-color: black !important;
+  background-color: transparent !important; */
+  /* color: white ; */
+  /* opacity: 0.4 !important; */
+  /* background-image: black !important; */
+  background: url(blackblock.PNG) !important;
+
+  opacity: 0.85 !important;
+/* color: white !important; */
+-webkit-filter: grayscale(100%) !important; /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%) !important;
+  /* opacity: 0.2; */
+  /* position: absolute; */
+  /* left: 0px; */
+  /* display: inline-block; */
+  
+}
+/* .RowFull::before {
+  content:"";
+  display: block;
+  height: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5
+} */
+table div{
+  text-align: center !important;
+}
+table{
+  margin-bottom:0 !important;
+  /* padding-bottom: 0 !important; */
+}
+.descr{
+  text-align: left !important;
+}
+.course-buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2em;
+  /* margin-bottom: 2em; */
+  /* width: 100%; */
+}
+.course-buttons-level{
+  flex: 0 0 25%;
+  /* flex-basis: 22%; */
+  
+  margin-bottom: 1em;
+  /* flex: 1; */
+}
+.button-level{
+  margin-left: 10%;
+  transition: background-color 0.5s ease;
+  height: 5vh;
+  font-size: 1.7em;
+  /* border: 2px solid lightgreen; */
+  /* color: lightgreen; */
+  width: 80%;
+  /* background-color:rgba(0, 0, 0, 0); */
+}
+.button-level:hover{
+  background-color: lightgreen;
+  color:white;
+}
+/* td{
+  padding-bottom: 0px !important;
+} */
+/* .custombutton{
+  Color: Green !important;
+} */
